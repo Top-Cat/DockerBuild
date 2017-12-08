@@ -34,6 +34,7 @@ RUN BUILD_DEPS="make gcc g++ libc6-dev ruby-dev" \
                      ca-certificates \
                      libjemalloc1 \
                      ruby \
+                     libgeoip-dev libmaxminddb-dev \
     && echo 'gem: --no-document' >> /etc/gemrc \
     && gem install --file Gemfile \
     && apt-get purge -y --auto-remove \
