@@ -5,3 +5,5 @@ RUN apt-get install -y autoconf make gcc pkg-config zlib1g-dev libmemcached-dev 
 RUN pecl install memcached redis mongodb
 
 RUN apt-get remove --purge --auto-remove -y autoconf make gcc pkg-config libssl-dev
+
+RUN sed -e 's/;clear_env = no/clear_env = no/' -i /opt/bitnami/php/etc/php-fpm.d/www.conf
