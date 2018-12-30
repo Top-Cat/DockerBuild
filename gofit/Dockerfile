@@ -1,3 +1,3 @@
 FROM golang:rc
-RUN go get -v github.com/timatooth/gofit
+RUN go get -v github.com/Top-Cat/gofit
 ENTRYPOINT ["gofit"]
