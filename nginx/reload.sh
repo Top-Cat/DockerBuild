@@ -1,5 +1,5 @@
 #!/bin/sh
-nginx "$@"
+nginx "$@" &
 oldcksum=`find /etc/nginx/conf.d -type f -exec md5sum {} \; | sort -k 2 | md5sum`
 
 while true; do
@@ -8,7 +8,7 @@ while true; do
 
 	newcksum=`find /etc/nginx/conf.d -type f -exec md5sum {} \; | sort -k 2 | md5sum`
 	if [ "$newcksum" != "$oldcksum" ]; then
-		echo "At ${time} on ${date}, config file update detected."
+		echo "On $(date), config file update detected."
 		oldcksum=$newcksum
 		nginx "$@" -s reload
 	fi
