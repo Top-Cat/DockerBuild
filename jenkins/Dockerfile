@@ -1,5 +1,6 @@
 FROM jenkins/jenkins:lts
 USER root
+ENV DOCKER_API_VERSION=1.39
 RUN apt-get update && apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common gettext && \
     curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
