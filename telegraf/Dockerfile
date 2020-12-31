@@ -5,3 +5,4 @@ RUN pip install speedtest-cli
 COPY UBNT-MIB /root/.snmp/mibs/
 COPY UBNT-UniFi-MIB /root/.snmp/mibs/
 COPY FROGFOOT-RESOURCES-MIB /root/.snmp/mibs/
+COPY POWERNET-432-MIB /root/.snmp/mibs/
