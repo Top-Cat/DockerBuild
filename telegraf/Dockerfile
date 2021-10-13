@@ -1,5 +1,5 @@
-FROM telegraf:1.12.4
-RUN sed -i "s/stretch main/stretch main contrib non-free/" /etc/apt/sources.list
+FROM telegraf:1.20.2
+RUN sed -i "s/buster main/buster main contrib non-free/" /etc/apt/sources.list
 RUN apt-get update && apt-get -y install snmp-mibs-downloader ntp apcupsd python-pip
 RUN pip install speedtest-cli
 COPY UBNT-MIB /root/.snmp/mibs/
