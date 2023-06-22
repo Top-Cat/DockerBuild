@@ -13,4 +13,6 @@ cat <<EOT >> /etc/pam.d/common-account
 session    required   pam_mkhomedir.so skel=/etc/skel/ umask=0022
 EOT
 
+service nslcd start
+
 /usr/sbin/sshd -De
