@@ -9,7 +9,11 @@ cat > /app/ctrl.conf <<EOF
 		"control-sockets": {
 			"dhcp4": {},
 			"d2": {}
-		}
+		},
+
+		"trust-anchor": "$KEA_TLS_CA",
+		"cert-file": "$KEA_TLS_CERT",
+		"key-file": "$KEA_TLS_KEY"
 	}
 }
 EOF
