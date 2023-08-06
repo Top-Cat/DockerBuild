@@ -4,7 +4,13 @@ cat > /app/ctrl.conf <<EOF
 {
 	"Control-agent": {
 		"http-host": "$KEA_CA_HOST",
-		"http-port": $KEA_CA_PORT
+		"http-port": $KEA_CA_PORT,
+
+		"control-sockets": {
+			"dhcp4": {},
+			"dhcp6": {},
+			"d2": {}
+		}
 	}
 }
 EOF
