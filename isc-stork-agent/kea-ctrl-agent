@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cat > /app/ctrl.conf <<EOF
+{
+	"Control-agent": {
+		"http-host": "$KEA_CA_HOST",
+		"http-port": $KEA_CA_PORT
+	}
+}
+EOF
+
+/usr/bin/stork-agent
