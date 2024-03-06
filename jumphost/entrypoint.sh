@@ -2,6 +2,8 @@
 
 sed -i "s/#binddn cn=proxyuser,dc=padl,dc=com/binddn cn=admin,dc=top-cat,dc=me/" /etc/libnss-ldap.conf
 sed -i "s/#bindpw secret/bindpw $LDAP_BIND_PW/" /etc/libnss-ldap.conf
+sed -i "s/#binddn cn=annonymous,dc=example,dc=net/binddn cn=admin,dc=top-cat,dc=me/" /etc/nslcd.conf
+sed -i "s/#bindpw secret/bindpw $LDAP_BIND_PW/" /etc/nslcd.conf
 
 cat <<EOT >> /etc/ssh/sshd_config
 AllowGroups $1
