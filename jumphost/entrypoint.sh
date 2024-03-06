@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sed -i "s/#binddn cn=proxyuser,dc=padl,dc=com/binddn cn=admin,dc=top-cat,dc=me/" /etc/libnss-ldap.conf
+sed -i "s/#bindpw secret/bindpw $LDAP_BIND_PW/" /etc/libnss-ldap.conf
+
 cat <<EOT >> /etc/ssh/sshd_config
 AllowGroups $1
 AllowTcpForwarding no
