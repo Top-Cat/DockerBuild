@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install -y build-essential git postgresql-server-dev-16 libicu-dev
 
 WORKDIR /opt
-RUN git clone https://github.com/postgrespro/pg_trgm_pro
+RUN git clone https://github.com/Top-Cat/pg_trgm_pro.git
 
 WORKDIR /opt/pg_trgm_pro
 RUN make USE_PGXS=1
