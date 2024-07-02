@@ -1,0 +1,1 @@
+telegraf ALL=NOPASSWD:/usr/sbin/smartctl
