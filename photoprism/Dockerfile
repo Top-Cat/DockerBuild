@@ -1,4 +1,4 @@
-FROM photoprism/photoprism
+FROM photoprism/photoprism:preview
 
 RUN apt-get update
 RUN apt-get install -y cron rsyslog
