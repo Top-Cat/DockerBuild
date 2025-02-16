@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8-cli
 
 RUN apt-get update
 RUN apt-get install -y libzip-dev zip msmtp-mta
