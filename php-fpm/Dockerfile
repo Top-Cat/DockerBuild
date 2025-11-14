@@ -2,8 +2,7 @@ FROM bitnamilegacy/php-fpm
 
 RUN apt-get update
 RUN apt-get install -y autoconf make gcc pkg-config zlib1g-dev libmemcached-dev ssmtp libssl-dev php-pdo-pgsql
-#RUN pecl install memcached redis mongodb
-RUN apt-get install -y php-mongodb php-redis php-memcached
+RUN pecl install memcached redis mongodb
 
 RUN apt-get remove --purge --auto-remove -y autoconf make gcc pkg-config libssl-dev
 
