@@ -8,4 +8,5 @@ RUN apt-get remove --purge --auto-remove -y autoconf make gcc pkg-config libssl-
 
 RUN sed -e 's/;clear_env = no/clear_env = no/' -i /opt/bitnami/php/etc/php-fpm.d/www.conf && \
     sed -e 's/;catch_workers_output = yes/catch_workers_output = yes/' -i /opt/bitnami/php/etc/php-fpm.d/www.conf && \
-    sed -e 's/pm.max_children = 5/pm.max_children = 25/' -i /opt/bitnami/php/etc/php-fpm.d/www.conf
+    sed -e 's/pm.max_children = 5/pm.max_children = 25/' -i /opt/bitnami/php/etc/php-fpm.d/www.conf && \
+    sed -e 's#error_log = /opt/bitnami/php/logs/php-fpm.log#error_log = /proc/self/fd/2#' -i /opt/bitnami/php/etc/php-fpm.conf
