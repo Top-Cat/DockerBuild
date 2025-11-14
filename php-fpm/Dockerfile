@@ -1,4 +1,4 @@
-FROM bitnami/php-fpm
+FROM bitnamilegacy/php-fpm
 
 RUN apt-get update
 RUN apt-get install -y autoconf make gcc pkg-config zlib1g-dev libmemcached-dev ssmtp libssl-dev php-pdo-pgsql
