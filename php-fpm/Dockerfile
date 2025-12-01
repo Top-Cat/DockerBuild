@@ -31,7 +31,8 @@ RUN set -eux \
         yaml \
         zstd-libs \
 	libldap \
-	libwebp
+	libwebp \
+	msmtp
 
 RUN set -eux \
     && apk add --no-cache --virtual .build-deps \
