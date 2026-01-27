@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:lts
 USER root
 ENV DOCKER_API_VERSION=1.39
-RUN apt-get update && apt-get -y install apt-transport-https ca-certificates curl gnupg2 software-properties-common gettext && \
+RUN apt-get update && apt-get -y install apt-transport-https ca-certificates curl gnupg2 gettext && \
     install -m 0755 -d /etc/apt/keyrings && \
     curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc && \
     chmod a+r /etc/apt/keyrings/docker.asc && \
