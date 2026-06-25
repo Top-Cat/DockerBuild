@@ -8,3 +8,4 @@ COPY UBNT-UniFi-MIB /usr/share/snmp/mibs/
 COPY FROGFOOT-RESOURCES-MIB /usr/share/snmp/mibs/
 COPY POWERNET-432-MIB /usr/share/snmp/mibs/
 COPY JUNIPER-MIB /usr/share/snmp/mibs/
+COPY JUNIPER-SMI /usr/share/snmp/mibs/
