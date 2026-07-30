@@ -1,6 +1,6 @@
-FROM php:8.4-fpm-alpine
+FROM php:8-fpm-alpine
 
-ARG IMAGICK_COMMIT="b47e91c83b0eb8db951794d0ed363ae20748b795"
+ARG IMAGICK_COMMIT="55ed2e9fda264395636a2e27e51f31673f5566ab"
 
 RUN set -eux \
     && apk add --no-cache \
@@ -15,6 +15,7 @@ RUN set -eux \
         libgmpxx \
         libintl \
         libjpeg-turbo \
+        libmemcached \
         libpng \
         libpq \
         libssh2 \
@@ -53,6 +54,7 @@ RUN set -eux \
         krb5-dev \
         libc-dev \
         libjpeg-turbo-dev \
+        libmemcached-dev \
         libpng-dev \
         librdkafka-dev \
         libssh2-dev \
@@ -109,14 +111,14 @@ RUN set -eux \
     && docker-php-ext-configure pdo_mysql \
     && docker-php-ext-configure zip --with-zip \
 # Pecl Install
-    && pecl install amqp apcu memcache mongodb uuid yaml zstd ssh2-1.3.1 \
+    && pecl install amqp apcu memcached mongodb uuid yaml zstd ssh2-1.3.1 \
     && pecl install --configureoptions \
         'enable-redis-zstd="yes" enable-redis-lz4="yes"' \
         redis \
-    && docker-php-ext-enable amqp apcu memcache mongodb uuid yaml zstd ssh2 redis imagick lz4 \
+    && docker-php-ext-enable amqp apcu memcached mongodb uuid yaml zstd ssh2 redis imagick lz4 \
 # Ext Install
     && docker-php-ext-install -j$(nproc) gettext gmp bcmath bz2 exif gd calendar ftp ldap \
-        pdo_mysql mysqli pdo_dblib pdo_pgsql pgsql intl opcache pcntl soap tidy xsl zip \
+        pdo_mysql mysqli pdo_dblib pdo_pgsql pgsql intl pcntl soap tidy xsl zip \
 # Install sockets, sysvmsg, sysvsem, sysvshm (also needed by swoole)
     && CFLAGS="${CFLAGS:=} -D_GNU_SOURCE" docker-php-ext-install -j$(nproc) \
         sockets \
