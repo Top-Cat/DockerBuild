@@ -1,0 +1,3 @@
+#!/usr/bin/execlineb -P
+fdmove -c 2 1
+exec ionice -c 3 s6-setuidgid samba /usr/sbin/smbd --foreground --no-process-group --debug-stdout
