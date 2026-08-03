@@ -15,7 +15,6 @@ RUN tar Jxpf /tmp/s6-overlay-x86_64.tar.xz -C / && tar -C / -Jxpf /tmp/s6-overla
     rm -rf /tmp/*
 
 RUN mkdir -p /log/nslcd && chown -R nobody:nogroup /log
-RUN useradd samba && mkdir /run/samba && chown -R samba:samba /var/log/samba /run/samba /var/cache/samba /var/lib/samba
 
 COPY rootfs /
 
